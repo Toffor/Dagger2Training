@@ -11,8 +11,9 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        navigator.init()
+        navigator.init(this)
     }
 
     override fun getLayoutId(): Int = R.layout.activity_main
+
 }

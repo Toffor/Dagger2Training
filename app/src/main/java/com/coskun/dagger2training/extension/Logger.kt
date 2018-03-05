@@ -7,5 +7,5 @@ import android.util.Log
  */
 
 fun Any.logDebug(any: Any){
-    Log.d("Dagger2TrainingApp ${this.javaClass.simpleName}", any.toString())
+    Log.d("Logger ${this.javaClass.simpleName}", any.toString())
 }

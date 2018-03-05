@@ -1,6 +1,5 @@
 package com.coskun.dagger2training.ui.main
 
-
 import android.os.Bundle
 import android.view.View
 import com.coskun.dagger2training.R
@@ -24,7 +23,7 @@ class ParentFragment() : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navigator.initChildFragment(this)
+        navigator.initChild1Fragment(this)
     }
 
 }

@@ -10,25 +10,27 @@ import javax.inject.Inject
  */
 
 @PerActivity
-class Navigator @Inject constructor(mainActivity: MainActivity) {
+class Navigator @Inject constructor() {
 
-    private val fragmentManager = mainActivity.supportFragmentManager
+    private var fragmentManger : FragmentManager? = null
 
-
-    fun init(){
-        if(fragmentManager.backStackEntryCount == 0)
+    fun init(mainActivity: MainActivity){
+        fragmentManger = mainActivity.supportFragmentManager
+        if (fragmentManger!!.backStackEntryCount == 0)
             replaceFragment(ParentFragment.newInstance())
     }
 
-    fun initChildFragment(fragment: ParentFragment){
-        replaceFragment(Child1Fragment.newInstance(), fragment.childFragmentManager, R.id.parent_fragment_container)
+    fun initChild1Fragment(fragment: ParentFragment){
+        val childFragmentManager = fragment.childFragmentManager
+        if (childFragmentManager.backStackEntryCount == 0)
+        replaceFragment(Child1Fragment.newInstance(), childFragmentManager, R.id.parent_fragment_container)
     }
 
-    private fun replaceFragment(fragment: Fragment, fm: FragmentManager = fragmentManager, containerId: Int = R.id.main_fragment_container){
+    private fun replaceFragment(fragment: Fragment, fm: FragmentManager? = fragmentManger, containerId: Int = R.id.main_fragment_container){
         fm
-                .beginTransaction()
-                .replace(containerId, fragment, fragment::class.java.canonicalName)
-                .addToBackStack(null)
-                .commit()
+                ?.beginTransaction()
+                ?.replace(containerId, fragment, fragment::class.java.canonicalName)
+                ?.addToBackStack(null)
+                ?.commitAllowingStateLoss()
     }
 }
