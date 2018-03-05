@@ -1,6 +1,7 @@
 package com.coskun.dagger2training.di
 
-import com.coskun.dagger2training.ui.MainActivity
+import com.coskun.dagger2training.ui.main.MainActivity
+import com.coskun.dagger2training.ui.main.MainActivityFragmentBuilderModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -12,7 +13,7 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityBindingModule {
 
     @PerActivity
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [MainActivityFragmentBuilderModule::class])
     abstract fun contributeMainActivity() : MainActivity
 
 }
