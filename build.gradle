@@ -25,3 +25,9 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext{
+    support_version = '27.1.0'
+    dagger_version = '2.14.1'
+    constraint_layout_version = '1.0.2'
+}
