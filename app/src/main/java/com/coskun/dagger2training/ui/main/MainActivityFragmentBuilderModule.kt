@@ -12,6 +12,6 @@ import dagger.android.ContributesAndroidInjector
 abstract class MainActivityFragmentBuilderModule {
 
     @PerFragment
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(modules = [ParentFragmentChildBuilderModule::class])
     abstract fun contributeParentFragment() : ParentFragment
 }

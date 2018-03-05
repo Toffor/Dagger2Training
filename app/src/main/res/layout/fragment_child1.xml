@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.coskun.dagger2training.ui.main.ParentFragment">
+    tools:context="com.coskun.dagger2training.ui.main.Child1Fragment">
 
-
-    <FrameLayout
-        android:id="@+id/parent_fragment_container"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:text="Child 1" />
+
 
 </FrameLayout>

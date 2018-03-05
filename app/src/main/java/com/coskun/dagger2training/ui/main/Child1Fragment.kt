@@ -11,20 +11,18 @@ import javax.inject.Inject
 /**
  * Created by Coskun Yalcinkaya.
  */
-
-class ParentFragment() : BaseFragment() {
-
-    companion object {
-        fun newInstance() = ParentFragment()
-    }
+class Child1Fragment() : BaseFragment() {
 
     @Inject lateinit var navigator: Navigator
 
-    override fun getLayoutId() = R.layout.fragment_parent
+    companion object {
+        fun newInstance() = Child1Fragment()
+    }
+
+    override fun getLayoutId() = R.layout.fragment_child1
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navigator.initChildFragment(this)
     }
 
 }
