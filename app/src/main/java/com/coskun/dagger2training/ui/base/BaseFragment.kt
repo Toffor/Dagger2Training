@@ -55,7 +55,11 @@ abstract class BaseFragment : Fragment(), HasSupportFragmentInjector{
         (activity as BaseActivity).fragmentAndroidInjector.clearCache(this)
     }
 
-    
+    open fun onBackPressed(){
+
+    }
+
+
     override fun supportFragmentInjector() = childFragmentAndroidInjector
 
 

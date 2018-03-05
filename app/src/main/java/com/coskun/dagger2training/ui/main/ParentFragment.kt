@@ -26,4 +26,9 @@ class ParentFragment() : BaseFragment() {
         navigator.initChild1Fragment(this)
     }
 
+    override fun onBackPressed() {
+        if (childFragmentManager.backStackEntryCount > 1)
+            childFragmentManager.popBackStack()
+    }
+
 }
