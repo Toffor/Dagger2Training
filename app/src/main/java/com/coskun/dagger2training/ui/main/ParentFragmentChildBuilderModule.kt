@@ -14,4 +14,8 @@ abstract class ParentFragmentChildBuilderModule {
     @PerChildFragment
     @ContributesAndroidInjector
     abstract fun contributeChild1Fragment() : Child1Fragment
+
+    @PerChildFragment
+    @ContributesAndroidInjector
+    abstract fun contributeChild2Fragment() : Child2Fragment
 }

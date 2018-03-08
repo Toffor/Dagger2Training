@@ -26,6 +26,10 @@ class Navigator @Inject constructor() {
         replaceFragment(Child1Fragment.newInstance(), childFragmentManager, R.id.parent_fragment_container)
     }
 
+    fun navigateToChild2Fragment(fragment: ParentFragment){
+        replaceFragment(Child2Fragment.newInstance(), fragment.childFragmentManager, R.id.parent_fragment_container)
+    }
+
     private fun replaceFragment(fragment: Fragment, fm: FragmentManager? = fragmentManger, containerId: Int = R.id.main_fragment_container){
         fm
                 ?.beginTransaction()

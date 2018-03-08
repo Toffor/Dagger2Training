@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import com.coskun.dagger2training.R
 import com.coskun.dagger2training.ui.base.BaseFragment
+import kotlinx.android.synthetic.main.fragment_child1.*
 import javax.inject.Inject
 
 
@@ -23,6 +24,7 @@ class Child1Fragment() : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        next_fragment.setOnClickListener { navigator.navigateToChild2Fragment(parentFragment as ParentFragment) }
     }
 
 }
