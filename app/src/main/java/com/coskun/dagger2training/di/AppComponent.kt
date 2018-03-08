@@ -2,6 +2,7 @@ package com.coskun.dagger2training.di
 
 import android.app.Application
 import com.coskun.dagger2training.App
+import com.coskun.dagger2training.data.CityRepositoryModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
@@ -12,7 +13,12 @@ import javax.inject.Singleton
  */
 
 @Singleton
-@Component(modules = [AppModule::class, AndroidSupportInjectionModule::class, ActivityBindingModule::class])
+@Component(modules = [
+    AppModule::class,
+    AndroidSupportInjectionModule::class,
+    ActivityBindingModule::class,
+    CityRepositoryModule::class
+])
 interface AppComponent {
 
     @Component.Builder
